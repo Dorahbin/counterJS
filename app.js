@@ -18,34 +18,42 @@ let res = document.querySelector('.res');
 let body = document.querySelector('body');
 let h1 = document.querySelector('h1');
 
+// Function change colour
+function changeBackground() {
+  if (parseInt(h1.innerText) > 0) {
+    document.body.style.backgroundColor = 'green';
+  } else if (parseInt(h1.innerText) < 0) {
+    document.body.style.backgroundColor = 'red';
+  } else {
+    document.body.style.backgroundColor = 'yellow';
+  }
+}
+
 // increase
 inc.addEventListener('click', function () {
   h1.innerText++;
-  if (h1.innerText >= 1) {
-    document.body.style.backgroundColor = 'green';
-  }
+  changeBackground();
+  // if (h1.innerText >= 1) {
+  //   document.body.style.backgroundColor = 'green';
+  // }
 });
 
 // decrease
 dec.addEventListener('click', function () {
   h1.innerText--;
-  if (h1.innerText < 0) {
-    document.body.style.backgroundColor = 'red';
-  }
+  changeBackground();
+
+  // if (h1.innerText < 0) {
+  //   document.body.style.backgroundColor = 'red';
+  // }
 });
 
 // default
 res.addEventListener('click', function () {
   h1.innerText = 0;
-  if (h1.innerText == 0) {
-    document.body.style.backgroundColor = 'yellow';
-  }
+  changeBackground();
+
+  // if (h1.innerText == 0) {
+  //   document.body.style.backgroundColor = 'yellow';
+  // }
 });
-
-//if h1 < 0, bg colour to red and if it is 0 , bg to yellow , if greater than 0 bg to green
-
-// function incremental() {
-//   h1.innerHTML++;
-// }
-
-// dec.addEventListener('click', incremental);
